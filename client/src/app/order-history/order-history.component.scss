@@ -1,0 +1,60 @@
+.order-history-container {
+  padding: 24px 16px;
+  max-width: 1024px;
+  margin: 0 auto;
+  > h2 {
+    margin-bottom: 16px;
+  }
+  .order-list {
+    .order-container {
+      .order-image {
+        > img {
+          width: 100%;
+        }
+      }
+      .order-title {
+      }
+      .order-total {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .order-history-container {
+    margin-top: 48px;
+    padding: 24px;
+    border: 1px solid #ccc;
+  }
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.tab-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.tab-list li {
+  margin-right: 20px;
+}
+
+.tab-list a {
+  text-decoration: none;
+  color: white;
+}
+
+.tab-list a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.container{
+  margin-left: 20px;
+  margin-right: 20px;
+}
