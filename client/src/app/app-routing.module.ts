@@ -15,6 +15,7 @@ import { OrderManagementComponentComponent } from './order-management-component/
 import { UserManagementComponentComponent } from './user-management-component/user-management-component.component';
 import {EditProductComponent} from './edit-product/edit-product.component'
 import { CategoriManagementCompomentComponent } from './categori-management-compoment/categori-management-compoment.component';
+import { ProductListComponent } from './product-list/product-list.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -49,6 +50,8 @@ const routes: Routes = [
   { path: 'categori-management', component: CategoriManagementCompomentComponent, canActivate: [AuthGuardService] },
 
   { path: 'edit-product', component: EditProductComponent, canActivate: [AuthGuardService] },
+  { path: 'category/:id', component: ProductListComponent },
+
 
   { path: '', redirectTo: '/product-management', pathMatch: 'full' },
 ];

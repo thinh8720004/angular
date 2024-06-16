@@ -7,6 +7,7 @@ import {
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 import { Products, Product } from '../shared/models/product.model';
+import { CatogoriesService } from '../services/categories.service';
 
 @Component({
   selector: 'app-home',
@@ -16,24 +17,29 @@ import { Products, Product } from '../shared/models/product.model';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
-  categories: any[] = [
-    {
-      name: 'Laptops',
-    },
-    {
-      name: 'Accessories',
-    },
-    {
-      name: 'Cameras',
-    },
-  ];
+  categories: any = [];
+  productsById: any = [];
+
+  // hiển thị cattegory ở phần header
+  // categories: any[]; = [
+  //   {
+  //     name: 'Laptops',
+  //   },
+  //   {
+  //     name: 'Accessories',
+  //   },
+  //   {
+  //     name: 'Điện tử',
+  //   },
+  // ];
   loading = false;
   productPageCounter = 1;
   additionalLoading = false;
 
   constructor(
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private categoriesService : CatogoriesService
   ) {}
 
   public screenWidth: any;
@@ -62,6 +68,19 @@ export class HomeComponent implements OnInit {
         }
       );
     }, 500);
+// lấy tất cả các res từ localhost của categori
+    this.categoriesService.listProduct().subscribe((res:any) => {
+      // this.productsById = res;
+      // console.log(this.productsById);
+      console.log(res);
+    })
+
+    this.categoriesService.listCategories().subscribe((res:any) => {
+      this.categories = res;
+      console.log(this.categories);
+    })
+
+
   }
 
   showMoreProducts(): void {
