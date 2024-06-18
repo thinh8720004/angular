@@ -42,6 +42,7 @@ import { OrderManagementComponentComponent } from './order-management-component/
 import { UserManagementComponentComponent } from './user-management-component/user-management-component.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CategoriManagementCompomentComponent } from './categori-management-compoment/categori-management-compoment.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 registerLocaleData(en);
 
@@ -65,6 +66,7 @@ registerLocaleData(en);
     UserManagementComponentComponent,
     EditProductComponent,
     CategoriManagementCompomentComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
